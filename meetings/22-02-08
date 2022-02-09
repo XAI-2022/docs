@@ -1,0 +1,26 @@
+Text-based evasion attacks - reading summaries. 
+
+Textbugger: Generating Adversarial Text against Real-world Applications (Li et al.), 2018
+https://arxiv.org/pdf/1812.05271.pdf 
+Proposes a framework to generate adversarial text under white and black box settings. Evaluated on existing learning models and online applications, including sentiment analysis (eg. Is a review positive or negative) and toxic comment detection. User study shows that the generated text is still human understandable and the same meaning is preserved. 
+This is done in a few steps. Firstly, important words are identified – the words most relevant to classification. Then small changes are made to the original words – eg. Inserting spaces into the words, deleting random characters, swapping adjacent letters, substituting in similar numbers, or replacing the word with a synonym. This can also be done in a black box setting without gradients. Insad of finding important words directly, important sentences are identified. This work was tested in the context of ‘sentiment analysis’, using databases of movie reviews, and for toxic content detection. 
+Generating Natural Language Adversarial Examples (Alzantot et al), 2018
+https://arxiv.org/pdf/1804.07998.pdf 
+This work also generates text-based evasion attacks. This is done through word replacement in a black box context. The search of possible perturbations is done using a genetic algorithm. This work was evaluated in the context of sentiment analysis (again, using movie reviews), and textual entailment (detecting whether two statements are in agreement or contradictory).
+
+Toward Crafting Text Adversarial Samples (Samanta et al), 2017
+https://arxiv.org/pdf/1707.02812.pdf 
+Three types of modifications are considered in this work: word replacement, insertion and removal. Again, this is done by calculating the contribution of each word towards the classification, and building a list of possible candidates that that word could be replaced with – including both synonyms and typos.
+
+Deceiving Google’s Perspective API Built for Detecting Toxic Comments (Hosseini et al.), 2017
+https://arxiv.org/pdf/1702.08138.pdf
+This paper proposes an attack on Google’s Perspective toxic content detection system. It is possible through a demonstration website (https://www.perspectiveapi.com/), to get the ‘perspective’ score for a piece of text. The proposed attack primarily relies on adding characters and typos to existing words to reduce the toxicity score. This article discusses Perspective’s effectiveness more generally, including its susceptibility to false alarm: basically adding not can completely change the meaning of a sentence without having much effect on the toxicity score. 
+
+Adversarial Attacks on Deep-learning models in Natural Language Processing: A survey (Zhang et al), 2020
+https://dl.acm.org/doi/pdf/10.1145/3374217?casa_token=bKQIUv58ZzYAAAAA:Lxy-tRf5f4TuCv1eFzWJLglFC3ryTDEp5U5Sx8bCmwKp9h7hj3G_UqgbwlFj_RnemcwYS6pJ1bg
+This paper includes a review of existing attacks on text-based deep learning models, and discusses open issues in this field. Many approaches have been proposed in the context of computer vision, including using GANs, gradient descent etc. Text-based DNNs are different however, since even small changes are perceivable, inputs are not continuous and small changes can completely change semantics. DNNs can use different encodings in this context, for example, counting words.
+There are a few categories of attack in this context. White box attacks identify the contributions of different text items and replace mot important words with misspellings. There are a few different ways this can be done – it is a little harder in the case of text-based classification because the inputs are not continuous. Other attacks concatenate distracting sentences to the end of a paragraph, adds negations, synonyms or antonyms. 
+Strategies have also been proposed for adversarial training. This includes augmenting the original training set with adversarial examples, model regularization, and ‘distillation'.
+
+
+
