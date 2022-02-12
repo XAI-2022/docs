@@ -25,6 +25,6 @@
 * (Yao et al, 2020) [DeepHammer: Depleting the Intelligence of Deep Neural Networks through Targeted Chain of Bit Flips](https://www.usenix.org/conference/usenixsecurity20/presentation/yao)
 * (Chen et al, 2021) [ProFlip: Targeted Trojan Attack with Progressive Bit Flips](https://openaccess.thecvf.com/content/ICCV2021/papers/Chen_ProFlip_Targeted_Trojan_Attack_With_Progressive_Bit_Flips_ICCV_2021_paper.pdf)
 * (Li et al, 2021) [RADAR: Run-time Adversarial Weight Attack Detection and Accuracy Recovery](https://arxiv.org/abs/2101.08254)
-* (Park et al, 2021) [ZeBRA: Precisely Destroying Neural Networks with Zero-Data Based Repeated Bit Flip Attack](https://arxiv.org/abs/2111.01080#:~:text=version%2C%20v2)%5D-,ZeBRA%3A%20Precisely%20Destroying%20Neural%20Networks%20with%20Zero%2DData,Based%20Repeated%20Bit%20Flip%20Attack&text=Our%20experimental%20results%20show%20that,to%20the%20previous%20attack%20method.)
+* (Park et al, 2021) [ZeBRA: Precisely Destroying Neural Networks with Zero-Data Based Repeated Bit Flip Attack](https://arxiv.org/abs/2111.01080#:~:text=version%2C%20v2)
 * (Bai et al, 2021) [TARGETED ATTACK AGAINST DEEP NEURAL NET- WORKS VIA FLIPPING LIMITED WEIGHT BITS](https://arxiv.org/abs/2102.10496)
 * (Park et al, 2021) [Mind control attack: Undermining deep learning with GPU memory exploitation](https://www.sciencedirect.com/science/article/pii/S0167404820303886)
