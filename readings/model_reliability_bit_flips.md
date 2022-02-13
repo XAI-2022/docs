@@ -42,4 +42,7 @@
 ---
 
 - (Hong et al, 2019) [Terminal Brain Damage: Exposing the Graceless Degradation in Deep Neural Networks Under Hardware Fault Attacks](https://arxiv.org/abs/1906.01017)
-  - 
+  - **Motivation & Q**: how does DNN react to bit flips, and properties of bit-flips (position, flip-direction) that affect the output accuracy the most
+  - Observation:
+    - Around half of DNNs (non-quantized non sparse) parameters are vulnerable to bit flips that cause +10% accuracy drop; caused by spikes of parameter value
+    - All models contain "critical parameters" that cause +90% accuracy drop -- drop out and batch normalization is ineffective in mitigating the vulnerabiltiy -- this makes since since these techniques don't affect the "critical parameters" anyway.
