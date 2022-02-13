@@ -23,8 +23,23 @@
 * (He et al, 2020) [Defending and Harnessing the Bit-Flip based Adversarial Weight Attack](https://openaccess.thecvf.com/content_CVPR_2020/papers/He_Defending_and_Harnessing_the_Bit-Flip_Based_Adversarial_Weight_Attack_CVPR_2020_paper.pdf)
 * (Liu et al, 2020) [Concurrent Weight Encoding-based Detection for Bit-Flip Attack on Neural Network Accelerators](https://ieeexplore.ieee.org/document/9256559)
 * (Yao et al, 2020) [DeepHammer: Depleting the Intelligence of Deep Neural Networks through Targeted Chain of Bit Flips](https://www.usenix.org/conference/usenixsecurity20/presentation/yao)
+  * **Motivation:** ML as service deployed in more places, internal threats (adversarial tampering of ML model+parameters) still vulnerable. Internal threats include RowHammer in DRAM (worse problem as DRAM gets denser). Quantized DNN are widely deployed for their efficiency and they're known to be robust against bit-flips (99% of the time there are no accuracy changes)
+  * **Question**: Uses an *untargeted* attack to deplete accuarcy of network to random guess, how vulnerable is quantized DNN to bit flips.
+  * **Observations**: randomized bitflips will not work, we must look for targeted bits to flip
+  * To achive the attack, we must find the bits that are most likely to swing the output
+    * Use gradient to find the most influential bit, then rank. Check that those bits can be flipped based on DRAM configuration
+  * **Limitations**: adversary requires lots of prior knowledge:
+    * Precise system configuration, virtual-physical memory mapping, requires attacker to find these information *offline*
+    * Finding most vulnerable bits required knowlege of the model architecture and parameters (white-box attack)
+    * Attack is untargeted, but the outcome tends to favour a *winner-group* -- detection of attack may be easier.
+  * **Question**: has such techniques been used on sparse networks where non-important weights have already been pruned?
 * (Chen et al, 2021) [ProFlip: Targeted Trojan Attack with Progressive Bit Flips](https://openaccess.thecvf.com/content/ICCV2021/papers/Chen_ProFlip_Targeted_Trojan_Attack_With_Progressive_Bit_Flips_ICCV_2021_paper.pdf)
 * (Li et al, 2021) [RADAR: Run-time Adversarial Weight Attack Detection and Accuracy Recovery](https://arxiv.org/abs/2101.08254)
 * (Park et al, 2021) [ZeBRA: Precisely Destroying Neural Networks with Zero-Data Based Repeated Bit Flip Attack](https://arxiv.org/abs/2111.01080#:~:text=version%2C%20v2)
 * (Bai et al, 2021) [TARGETED ATTACK AGAINST DEEP NEURAL NET- WORKS VIA FLIPPING LIMITED WEIGHT BITS](https://arxiv.org/abs/2102.10496)
 * (Park et al, 2021) [Mind control attack: Undermining deep learning with GPU memory exploitation](https://www.sciencedirect.com/science/article/pii/S0167404820303886)
+
+---
+
+- (Hong et al, 2019) [Terminal Brain Damage: Exposing the Graceless Degradation in Deep Neural Networks Under Hardware Fault Attacks](https://arxiv.org/abs/1906.01017)
+  - 
