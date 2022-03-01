@@ -21,6 +21,8 @@
 * (Ghavami et al, 2021) [BDFA: A Blind Data Adversarial Bit-flip Attack on Deep Neural Networks](https://arxiv.org/abs/2112.03477)
 ---
 * (He et al, 2020) [Defending and Harnessing the Bit-Flip based Adversarial Weight Attack](https://openaccess.thecvf.com/content_CVPR_2020/papers/He_Defending_and_Harnessing_the_Bit-Flip_Based_Adversarial_Weight_Attack_CVPR_2020_paper.pdf)
+  * **Overview**:
+  * **Limitations**:  
 * (Liu et al, 2020) [Concurrent Weight Encoding-based Detection for Bit-Flip Attack on Neural Network Accelerators](https://ieeexplore.ieee.org/document/9256559)
 * (Yao et al, 2020) [DeepHammer: Depleting the Intelligence of Deep Neural Networks through Targeted Chain of Bit Flips](https://www.usenix.org/conference/usenixsecurity20/presentation/yao)
   * **Motivation:** ML as service deployed in more places, internal threats (adversarial tampering of ML model+parameters) still vulnerable. Internal threats include RowHammer in DRAM (worse problem as DRAM gets denser). Quantized DNN are widely deployed for their efficiency and they're known to be robust against bit-flips (99% of the time there are no accuracy changes)
@@ -35,6 +37,8 @@
   * **Question**: has such techniques been used on sparse networks where non-important weights have already been pruned?
 * (Chen et al, 2021) [ProFlip: Targeted Trojan Attack with Progressive Bit Flips](https://openaccess.thecvf.com/content/ICCV2021/papers/Chen_ProFlip_Targeted_Trojan_Attack_With_Progressive_Bit_Flips_ICCV_2021_paper.pdf)
 * (Li et al, 2021) [RADAR: Run-time Adversarial Weight Attack Detection and Accuracy Recovery](https://arxiv.org/abs/2101.08254)
+  * **General Idea**: Rather than improving robustness during the network design or training stages, this paper focusses on detecting bit flips during inference through checksums. Checksums are computed using a secret key for the DRAM weights. When bitflips are detected, accuracy can be recovered by settind affected weights to zero. 
+  *  **Limitations**: Recovery doesn't completely recover original 'clean' accuracy. There is also a runtime overhead. 
 * (Park et al, 2021) [ZeBRA: Precisely Destroying Neural Networks with Zero-Data Based Repeated Bit Flip Attack](https://arxiv.org/abs/2111.01080#:~:text=version%2C%20v2)
 * (Bai et al, 2021) [TARGETED ATTACK AGAINST DEEP NEURAL NET- WORKS VIA FLIPPING LIMITED WEIGHT BITS](https://arxiv.org/abs/2102.10496)
 * (Park et al, 2021) [Mind control attack: Undermining deep learning with GPU memory exploitation](https://www.sciencedirect.com/science/article/pii/S0167404820303886)
