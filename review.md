@@ -6,6 +6,7 @@ This document contains a list of literature reviews
 | ------------------------------------------------------------ | ------------ | ------------------------------- | ---- | --------- | -------------------------------------------------------- |
 | [Robust Machine Learning Systems: Reliability and Security for Deep Neural Networks][1] | Hanif et al. | IOLTS                           | 2018 | 26        |                                                          |
 | [A survey on modeling and improving reliability of DNN algorithms and accelerators][17] | Mittal       | Journal of Systsms Architecture | 2020 | 41        | Include studies of other hardware faults in accelerators |
+| [A Review of Deep Learning Security and Privacy Defensive Techniques][19] | Tariq        | Mobile Information Systems      | 2020 | 16        |                                                          |
 
 ## Attack Papers
 
@@ -52,3 +53,4 @@ This document contains a list of literature reviews
 [16]: <https://ieeexplore.ieee.org/abstract/document/9152631?casa_token=JXMz283XFL4AAAAA:MSitDtaMstDq9QScaNYCwDBAK9_fQIYxN_iPUhsyuxJevjiTGzB8FmVH60pjc5bESn3NwM6g> "TRRespass: Exploiting the Many Sides of Target Row Refresh"
 [17]: <https://www.sciencedirect.com/science/article/pii/S1383762119304965> "A survey on modeling and improving reliability of DNN algorithms and accelerators"
 [18]: <https://dl.acm.org/doi/abs/10.1145/3295500.3356177> "*BinFI*: an efficient fault injector for safety-critical machine learning systems"
+[19]: <https://www.hindawi.com/journals/misy/2020/6535834/> "A Review of Deep Learning Security and Privacy Defensive Techniques"
