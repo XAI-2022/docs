@@ -12,7 +12,7 @@ This document contains a list of literature reviews
 
 | Paper                                                        | Authors        | Published                    | Year | Citations | Note                                       |
 | ------------------------------------------------------------ | -------------- | ---------------------------- | ---- | --------- | ------------------------------------------ |
-| [TBT][3]                                                     | Rakin et al.   | ICCV                         | 2019 | 92        |                                            |
+| [BFA][3]                                                     | Rakin et al.   | ICCV                         | 2019 | 92        |                                            |
 | [Terminal brain damage][15]                                  | Hong et al.    | USEINX Security              | 2019 | 83        |                                            |
 | [T-BFA][4]                                                   | Rakin et al.   | TPAMI                        | 2021 | 21        |                                            |
 | [Stealthy Attack no Algorithmic-Protected DNNs via Smart Bit Flipping][5] | Ghavami et al. | ---                          | 2021 | 0         |                                            |
