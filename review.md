@@ -2,11 +2,11 @@ This document contains a list of literature reviews
 
 ## Survey/Review Papers
 
-| Paper                                                        | Authors      | Published                       | Year | Citations | Note                                                     |
-| ------------------------------------------------------------ | ------------ | ------------------------------- | ---- | --------- | -------------------------------------------------------- |
-| [Robust Machine Learning Systems: Reliability and Security for Deep Neural Networks][1] | Hanif et al. | IOLTS                           | 2018 | 26        |                                                          |
-| [A survey on modeling and improving reliability of DNN algorithms and accelerators][17] | Mittal       | Journal of Systsms Architecture | 2020 | 41        | Include studies of other hardware faults in accelerators |
-| [A Review of Deep Learning Security and Privacy Defensive Techniques][19] | Tariq        | Mobile Information Systems      | 2020 | 16        |                                                          |
+| Paper                                                        | Authors      | Published                       | Year | Citations | Note                                                         |
+| ------------------------------------------------------------ | ------------ | ------------------------------- | ---- | --------- | ------------------------------------------------------------ |
+| [A survey on modeling and improving reliability of DNN algorithms and accelerators][17] | Mittal       | Journal of Systsms Architecture | 2020 | 41        | Include studies of other hardware faults in accelerators. [See notes](readings/mittal-survey.md) |
+| [Robust Machine Learning Systems: Reliability and Security for Deep Neural Networks][1] | Hanif et al. | IOLTS                           | 2018 | 26        |                                                              |
+| [A Review of Deep Learning Security and Privacy Defensive Techniques][19] | Tariq        | Mobile Information Systems      | 2020 | 16        |                                                              |
 
 ## Attack Papers
 
@@ -14,25 +14,45 @@ This document contains a list of literature reviews
 | ------------------------------------------------------------ | -------------- | ---------------------------- | ---- | --------- | ------------------------------------------ |
 | [TBT][3]                                                     | Rakin et al.   | ICCV                         | 2019 | 92        |                                            |
 | [Terminal brain damage][15]                                  | Hong et al.    | USEINX Security              | 2019 | 83        |                                            |
+| [DeepHammer][9]                                              | Yao et al.     | USENIX Security              | 2020 | 41        |                                            |
 | [T-BFA][4]                                                   | Rakin et al.   | TPAMI                        | 2021 | 21        |                                            |
+| [Targeted Attack against Deep Neural Networks via Flipping Limited Weight Bits][13] | Bai et al.     | ---                          | 2021 | 14        |                                            |
 | [Stealthy Attack no Algorithmic-Protected DNNs via Smart Bit Flipping][5] | Ghavami et al. | ---                          | 2021 | 0         |                                            |
 | [BDFA][6]                                                    | Ghavami et al. | ---                          | 2021 | 0         |                                            |
-| [DeepHammer][9]                                              | Yao et al.     | USENIX Security              | 2020 | 41        |                                            |
 | [ProFlip][10]                                                | Chen et al.    | ICCV                         | 2021 | 1         |                                            |
 | [ZeBRA][12]                                                  | Park et al.    | ---                          | 2021 | 0         |                                            |
-| [Targeted Attack against Deep Neural Networks via Flipping Limited Weight Bits][13] | Bai et al.     | ---                          | 2021 | 14        |                                            |
 | [Mind control][14]                                           | Park et al.    | Journal: Computer & Security | 2021 | 1         | Other hardware fault attack via GPU memory |
 
 ## Defense Papers
 
+Defenses against bit-flip fault attacks on DNNs belong to one of serveral layers (here listed from low-level to high level):
+
+- Memory hardware level mitigation; attempts to close vulnerability that a bit could flipped via physical redesigns (e.g. SRAM)
+
+- Memory hardware level detection and correction (e.g. ECC memory)
+
+- Register/architectural level mitigation: (e.g. preventing attacks like RowHammer)
+
+- OS 
+
+  
+
 | Paper                                                        | Authors       | Published | Year | Citations | Note                                                |
 | ------------------------------------------------------------ | ------------- | --------- | ---- | --------- | --------------------------------------------------- |
-| [An Efficient Bit-Flip Resilience Optimization Method for Deep Neural Networks][2] | Schorn et al. | DATE      | 2019 | 10        |                                                     |
-| [Defending and Harnessing the Bit-Flip based Adversarial Weight Attack][7] | He et al.     | CVPR      | 2020 | 28        |                                                     |
-| [Concurrent Weight Encoding-based Detection for Bit-Flip Attack on Neural Network Accelerators][8] | Liu et al.    | ICCAD     | 2020 | 3         |                                                     |
-| [RADAR][11]                                                  | Li et al.     | DATE      | 2021 | 5         |                                                     |
 | [TRRespass][16]                                              | Frigo et al.  | SP        | 2020 | 75        | Hardware-level defense against RowHammer in general |
 | [BinFI][18]                                                  | Chen et al.   | SC        | 2019 | 32        |                                                     |
+| [Defending and Harnessing the Bit-Flip based Adversarial Weight Attack][7] | He et al.     | CVPR      | 2020 | 28        |                                                     |
+| [An Efficient Bit-Flip Resilience Optimization Method for Deep Neural Networks][2] | Schorn et al. | DATE      | 2019 | 10        |                                                     |
+| [Concurrent Weight Encoding-based Detection for Bit-Flip Attack on Neural Network Accelerators][8] | Liu et al.    | ICCAD     | 2020 | 3         |                                                     |
+| [RADAR][11]                                                  | Li et al.     | DATE      | 2021 | 5         |                                                     |
+
+### Existing Features of DNNs that are resilient against faults
+
+- **Computation**: normalization, ReLU, max-pooling
+- **Training**: retraining network, dropout training, [DropConnect][20]
+
+
+
 
 [1]: <https://ieeexplore.ieee.org/document/8474192> "Robust Machine Learning Systems: Reliability and Security for Deep Neural Networks"
 [2]: <https://ieeexplore.ieee.org/document/8714885> "An Efficient Bit-Flip Resilience Optimization Method for Deep Neural Networks"
@@ -54,3 +74,5 @@ This document contains a list of literature reviews
 [17]: <https://www.sciencedirect.com/science/article/pii/S1383762119304965> "A survey on modeling and improving reliability of DNN algorithms and accelerators"
 [18]: <https://dl.acm.org/doi/abs/10.1145/3295500.3356177> "*BinFI*: an efficient fault injector for safety-critical machine learning systems"
 [19]: <https://www.hindawi.com/journals/misy/2020/6535834/> "A Review of Deep Learning Security and Privacy Defensive Techniques"
+[20]: <https://proceedings.mlr.press/v28/wan13.html> "Regularization of Neural Networks using DropConnect"
+
